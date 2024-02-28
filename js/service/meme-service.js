@@ -36,6 +36,8 @@ var gMeme = {
 
 var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
 
+const linesArr = []
+
 
 function getMeme() {
   return gMeme
@@ -51,19 +53,25 @@ function drawMeme(id) {
     gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
-    AddLine()
+    linesArr.map((line, idx) => {
+
+      gCtx.fillStyle = line[idx].color
+      gCtx.font = `${line[idx].size}px Arial`
+      gCtx.fillText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
+  
+    })
     
   }
 }
 
 
-const linesArr = []
+
 
 
 function AddLine() {
 
   gMeme.lines.push({
-    txt: 'yo',
+    txt: 'CHINA',
     size: 30,
     color: getRandomColor(),
   });

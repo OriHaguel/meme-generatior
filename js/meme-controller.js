@@ -12,7 +12,7 @@ function onInit() {
 }
 
 function renderMeme() {
-  gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+  // gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
 
   const meme = getMeme()
   const { selectedImgId, selectedLineIdx, } = meme
@@ -20,6 +20,7 @@ function renderMeme() {
 
 
   drawMeme(selectedImgId)
+
   onMouseMove()
 }
 
@@ -53,7 +54,7 @@ function OnAddLine() {
 function onMouseMove() {
   gElCanvas.addEventListener('mousemove', function (event) {
 
-
+// console.log('gElCanvas', gCtx)
     var mouseX = event.offsetX;
     var mouseY = event.offsetY;
 
@@ -66,7 +67,7 @@ function onMouseMove() {
 // console.log('textHeight', textHeight)
 
       var textX = 100 + (idx * 50); 
-      var textY = 70 + (idx * 50); 
+      var textY = (100 - textHeight) + (idx * 50); 
 
       if (mouseX >= textX && mouseX <= textX + textWidth &&
           mouseY >= textY && mouseY <= textY + textHeight) {
