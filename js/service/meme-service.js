@@ -1,13 +1,14 @@
+'use strict'
 var gImgs = [
   {
     id: 1,
-    url: "meme-imgs/meme-imgs (square)/1.jpg",
+    url: "meme-imgs/meme-imgs/1.jpg",
     keywords: ["funny", "cat"],
   },
-];
+]
 
 var gMeme = {
-  selectedImgId: 5,
+  selectedImgId: 1,
   selectedLineIdx: 0,
   lines: [
     {
@@ -16,21 +17,30 @@ var gMeme = {
       color: "red",
     },
   ],
-};
+}
 
-var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 };
+var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
 
-function getMeme() {}
+
+function getMeme() {
+  return gMeme
+}
 
 // draw img handler
-function drawImg() {
+function drawMeme(id,txt) {
   const img = new Image()
-  img.src = "meme-imgs/meme-imgs (various aspect ratios)/19.jpg";
+  const imgIdx = getPlaceById(id)
 
+  img.src = imgIdx.url
   img.onload = () => {
+
     gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-  };
+    
+    gCtx.fillStyle = "green"
+    gCtx.font = "30px Arial"
+    gCtx.fillText(txt, 100, 100)
+  }
 }
 
 // download / upload handler
@@ -93,4 +103,9 @@ function doUploadImg(imgDataUrl, onSuccess) {
   };
   XHR.open("POST", "//ca-upload.com/here/upload.php");
   XHR.send(formData);
+}
+
+
+function getPlaceById(imgId) {
+  return gImgs.find(img => img.id === imgId)
 }

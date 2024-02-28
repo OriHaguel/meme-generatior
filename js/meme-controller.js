@@ -1,17 +1,30 @@
-let gElCanvas;
-let gCtx;
+'use strict'
+let gElCanvas
+let gCtx
 
 function onInit() {
-  gElCanvas = document.querySelector("canvas");
-  gCtx = gElCanvas.getContext("2d");
-  //   renderMeme();
-  drawImg();
+  gElCanvas = document.querySelector('canvas')
+  gCtx = gElCanvas.getContext('2d')
+
+  
+  renderMeme()
+
 }
 
 function renderMeme() {
-  gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height);
+  gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+  const meme = getMeme()
+  const { selectedImgId, selectedLineIdx, } = meme
+  const { txt } = meme.lines[selectedLineIdx]
+  console.log('txt', txt)
 
-  //   gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height);
-  //   gCtx.fillStyle = "black";
-  //   gCtx.font = "20px Arial";
+
+
+ 
+  drawMeme(selectedImgId,txt)
+
+ 
+
+  
+
 }

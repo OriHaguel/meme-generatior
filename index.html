@@ -1,53 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body onload="onInit()">
-    <header>
-      <ul class="link-container">
-        <li><a href="">Editor</a></li>
-        <li><a href="">Gallery</a></li>
-        <li><a href="">About</a></li>
-      </ul>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-    <main>
-      <section class="editor">
+<body onload="onInit()">
+  <header>
+    <ul class="link-container">
+      <li><a href="">Editor</a></li>
+      <li><a href="">Gallery</a></li>
+      <li><a href="">About</a></li>
+    </ul>
+  </header>
+
+  <main>
+   
+   
+    <section class="editor">
+      <div>
         <canvas width="450" height="450" onclick="onDraw(event)"></canvas>
+      </div>
+      <div class="inputs">
+        <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download jpeg</a>
+        <button class="btn" onclick="onUploadImg()">
+          Upload to Facebook
+        </button>
+      </div>
 
-        <div class="inputs">
-          <a
-            href="#"
-            class="btn"
-            onclick="downloadImg(this)"
-            download="my-img.jpg"
-            >Download jpeg</a
-          >
-          <button class="btn" onclick="onUploadImg()">
-            Upload to Facebook
-          </button>
-        </div>
+      <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" accept="image/*" />
+    </section>
+    <section class="gallery"></section>
+  </main>
 
-        <input
-          type="file"
-          class="file-input btn"
-          name="image"
-          onchange="onImgInput(event)"
-          accept="image/*"
-        />
-      </section>
-      <section class="gallery"></section>
-    </main>
+  <script src="js/service/util-service.js"></script>
+  <script src="js/service/storage.service.js"></script>
+  <script src="js/service/meme-service.js"></script>
+  <script src="js/gallery-controller.js"></script>
+  <script src="js/meme-controller.js"></script>
+</body>
 
-    <script src="js/service/util-service.js"></script>
-    <script src="js/service/storage.service.js"></script>
-    <script src="js/service/meme-service.js"></script>
-    <script src="js/gallery-controller.js"></script>
-    <script src="js/meme-controller.js"></script>
-  </body>
 </html>
+
