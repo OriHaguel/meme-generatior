@@ -23,8 +23,8 @@ function renderMeme() {
 
 }
 
-
 function onSetLineTxt(elText){
   setLineTxt(elText)
   renderMeme()
 }
+

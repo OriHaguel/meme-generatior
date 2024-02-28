@@ -55,7 +55,10 @@ gMeme.lines[gMeme.selectedLineIdx].txt = text.value
 }
 
 
-
+function setImg(elImg){
+  gMeme.selectedImgId = parseInt(elImg.classList)
+  
+}
 
 
 
