@@ -2,8 +2,13 @@
 var gImgs = [
   {
     id: 1,
-    url: "meme-imgs/meme-imgs/1.jpg",
-    keywords: ["funny", "cat"],
+    url: 'meme-imgs/meme-imgs/1.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 2,
+    url: 'meme-imgs/meme-imgs/2.jpg',
+    keywords: ["funny", "cat"]
   },
 ]
 
@@ -12,7 +17,7 @@ var gMeme = {
   selectedLineIdx: 0,
   lines: [
     {
-      txt: "I sometimes eat Falafel",
+      txt: "CHINA",
       size: 20,
       color: "red",
     },
@@ -25,23 +30,72 @@ var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
 function getMeme() {
   return gMeme
 }
-
 // draw img handler
-function drawMeme(id,txt) {
+function drawMeme(id,txt,size,color) {
   const img = new Image()
   const imgIdx = getPlaceById(id)
 
   img.src = imgIdx.url
   img.onload = () => {
 
-    gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
+      gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+
+
     
-    gCtx.fillStyle = "green"
-    gCtx.font = "30px Arial"
+    gCtx.fillStyle = color
+    gCtx.font = `${size}px Arial`
     gCtx.fillText(txt, 100, 100)
   }
 }
+
+function setLineTxt(text) {
+gMeme.lines[gMeme.selectedLineIdx].txt = text.value
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getPlaceById(imgId) {
+  return gImgs.find(img => img.id === imgId)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // download / upload handler
 function downloadImg(elLink) {
@@ -106,6 +160,3 @@ function doUploadImg(imgDataUrl, onSuccess) {
 }
 
 
-function getPlaceById(imgId) {
-  return gImgs.find(img => img.id === imgId)
-}

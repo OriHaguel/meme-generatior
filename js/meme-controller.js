@@ -13,18 +13,19 @@ function onInit() {
 
 function renderMeme() {
   gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+  
   const meme = getMeme()
   const { selectedImgId, selectedLineIdx, } = meme
-  const { txt } = meme.lines[selectedLineIdx]
-  console.log('txt', txt)
+  const { txt, size, color} = meme.lines[selectedLineIdx]
 
 
+  drawMeme(selectedImgId,txt,size,color)
 
- 
-  drawMeme(selectedImgId,txt)
 
- 
+}
 
-  
 
+function onSetLineTxt(elText){
+  setLineTxt(elText)
+  renderMeme()
 }

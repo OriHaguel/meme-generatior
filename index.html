@@ -9,6 +9,7 @@
 </head>
 
 <body onload="onInit()">
+  
   <header>
     <ul class="link-container">
       <li><a href="">Editor</a></li>
@@ -24,6 +25,11 @@
       <div>
         <canvas width="450" height="450" onclick="onDraw(event)"></canvas>
       </div>
+      
+
+      <input type="text" id="text" placeholder="Enter text" onchange="onSetLineTxt(this)">
+      
+    
       <div class="inputs">
         <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download jpeg</a>
         <button class="btn" onclick="onUploadImg()">
