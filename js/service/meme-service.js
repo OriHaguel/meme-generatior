@@ -16,16 +16,21 @@ var gMeme = {
   selectedImgId: 1,
   selectedLineIdx: 0,
   lines: [
-    {
-      txt: "CHINA",
-      size: 20,
-      color: "red",
-    },
-    {
-      txt: "not china",
-      size: 20,
-      color: "blue",
-    },
+    // {
+    //   txt: '',
+    //   size: 30,
+    //   color: getRandomColor(),
+    // },
+    // {
+    //   txt: '',
+    //   size: 30,
+    //   color: getRandomColor(),
+    // },
+    // {
+    //   txt: '',
+    //   size: 30,
+    //   color: getRandomColor(),
+    // },
   ],
 }
 
@@ -36,33 +41,52 @@ function getMeme() {
   return gMeme
 }
 // draw img handler
-function drawMeme(id,txt,size,color) {
+function drawMeme(id) {
   const img = new Image()
-  const imgIdx = getPlaceById(id)
-
+  const imgIdx = getImageById(id)
   img.src = imgIdx.url
+
   img.onload = () => {
 
-      gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
+    gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
-
+    AddLine()
     
-    gCtx.fillStyle = color
-    gCtx.font = `${size}px Arial`
-    gCtx.fillText(txt, 100, 100)
   }
 }
 
-function setLineTxt(text) {
-gMeme.lines[gMeme.selectedLineIdx].txt = text.value
- 
+
+const linesArr = []
+
+
+function AddLine() {
+
+  gMeme.lines.push({
+    txt: 'yo',
+    size: 30,
+    color: getRandomColor(),
+  });
+
+
+  linesArr.push(gMeme.lines)
+  linesArr.map((line, idx) => {
+
+    gCtx.fillStyle = line[idx].color
+    gCtx.font = `${line[idx].size}px Arial`
+    gCtx.fillText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
+
+  })
 }
 
+function setLineTxt(text) {
+  gMeme.lines[gMeme.selectedLineIdx].txt = text.value
 
-function setImg(elImg){
+}
+
+function setImg(elImg) {
   gMeme.selectedImgId = parseInt(elImg.classList)
-  
+
 }
 
 function changeColor(elColor) {
@@ -73,22 +97,19 @@ function increaseFont() {
   gMeme.lines[gMeme.selectedLineIdx].size++
 }
 
-function decreaseFont(){
+function decreaseFont() {
   gMeme.lines[gMeme.selectedLineIdx].size--
 }
 
 
 
 
-
-
-
-
-
-
-function getPlaceById(imgId) {
+function getImageById(imgId) {
   return gImgs.find(img => img.id === imgId)
 }
+// function getMemeById(memeIdx) {
+//   return gMeme.lines.find((meme,idx) => meme[idx] === memeIdx)
+// }
 
 
 
