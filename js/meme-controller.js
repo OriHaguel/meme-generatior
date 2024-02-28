@@ -21,7 +21,6 @@ function renderMeme() {
 
   drawMeme(selectedImgId,txt,size,color)
 
-
 }
 
 

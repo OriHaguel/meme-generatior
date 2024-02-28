@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body onload="onInit()">
+<body onload="onInit(); onGalleryInit()" >
   
   <header>
     <ul class="link-container">
@@ -39,6 +39,8 @@
 
       <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" accept="image/*" />
     </section>
+    
+    
     <section class="gallery"></section>
   </main>
 
@@ -50,4 +52,5 @@
 </body>
 
 </html>
+
 
