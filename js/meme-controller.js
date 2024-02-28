@@ -28,3 +28,18 @@ function onSetLineTxt(elText){
   renderMeme()
 }
 
+function onChangeColor(elColor) {
+  changeColor(elColor)
+  renderMeme()
+}
+
+function onIncreaseFont() {
+  increaseFont()
+  renderMeme()
+}
+
+
+function onDecreaseFont() {
+  decreaseFont()
+  renderMeme()
+}

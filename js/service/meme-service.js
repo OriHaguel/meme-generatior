@@ -21,6 +21,11 @@ var gMeme = {
       size: 20,
       color: "red",
     },
+    {
+      txt: "not china",
+      size: 20,
+      color: "blue",
+    },
   ],
 }
 
@@ -60,10 +65,17 @@ function setImg(elImg){
   
 }
 
+function changeColor(elColor) {
+  gMeme.lines[gMeme.selectedLineIdx].color = elColor.value
+}
 
+function increaseFont() {
+  gMeme.lines[gMeme.selectedLineIdx].size++
+}
 
-
-
+function decreaseFont(){
+  gMeme.lines[gMeme.selectedLineIdx].size--
+}
 
 
 

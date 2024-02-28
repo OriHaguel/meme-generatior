@@ -29,7 +29,12 @@
 
       <input type="text" id="text" placeholder="Enter text" onchange="onSetLineTxt(this)">
       
+      <label for="color">set text color: </label>
+      <input type="color" class="color" name="color" form="frmRegister" value="#ff0000"  onchange="onChangeColor(this)"/>
     
+     <button class="up" onclick="onIncreaseFont()">↑</button>
+     <button class="down" onclick="onDecreaseFont()">↓</button>
+     
       <div class="inputs">
         <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download jpeg</a>
         <button class="btn" onclick="onUploadImg()">
