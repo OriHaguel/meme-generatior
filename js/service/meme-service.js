@@ -43,7 +43,7 @@ function getMeme() {
   return gMeme
 }
 // draw img handler
-function drawMeme(id) {
+function drawMeme(id, textX, textY,textWidth,textHeight) {
   const img = new Image()
   const imgIdx = getImageById(id)
   img.src = imgIdx.url
@@ -53,14 +53,32 @@ function drawMeme(id) {
     gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
-    linesArr.map((line, idx) => {
+    // linesArr.map((line, idx) => {
+
+    //   gCtx.fillStyle = line[idx].color
+    //   gCtx.font = `${line[idx].size}px Arial`
+    //   gCtx.fillText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
+
+    // })
+    linesArr.forEach((line, idx) => {
+      //  const textX = 100 + (idx * 50);
+      //  const textY = 100 + (idx * 50);
+      // const textWidth = gCtx.measureText(line[idx].txt).width
+      // const textHeight = line[idx].size;
+
 
       gCtx.fillStyle = line[idx].color
       gCtx.font = `${line[idx].size}px Arial`
+      
+      
+      
       gCtx.fillText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
-  
-    })
-    
+
+      gCtx.beginPath();
+      gCtx.rect(textX, textY, textWidth, textHeight);
+      gCtx.stroke();
+
+    });
   }
 }
 
@@ -101,20 +119,40 @@ function changeColor(elColor) {
   gMeme.lines[gMeme.selectedLineIdx].color = elColor.value
 }
 
-function increaseFont() {
+function increaseFont(width) {
   gMeme.lines[gMeme.selectedLineIdx].size++
+ 
 }
 
 function decreaseFont() {
   gMeme.lines[gMeme.selectedLineIdx].size--
 }
 
-
-
-
 function getImageById(imgId) {
   return gImgs.find(img => img.id === imgId)
 }
+
+
+function switchLine() {
+  gMeme.selectedLineIdx++
+
+  if (gMeme.selectedLineIdx === gMeme.lines.length) {
+    gMeme.selectedLineIdx = 0
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 // function getMemeById(memeIdx) {
 //   return gMeme.lines.find((meme,idx) => meme[idx] === memeIdx)
 // }
