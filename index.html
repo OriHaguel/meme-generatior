@@ -8,48 +8,64 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body onload="onInit(); onGalleryInit()" >
-  
+<body onload="onInit(); onGalleryInit()">
+
   <header>
     <ul class="link-container">
-      <li><a href="">Editor</a></li>
-      <li><a href="">Gallery</a></li>
-      <li><a href="">About</a></li>
+      <li onclick="onShowEditor()">Editor</li>
+      <li onclick="onShowGallery()">Gallery</li>
+      <li onclick="onShowAbout()">About</li>
     </ul>
   </header>
 
   <main>
-   
-   
+
+
     <section class="editor">
-      <div>
-        <canvas width="450" height="450"></canvas>
-      </div>
-      
-
-      <input type="text" id="text" placeholder="Enter text" onchange="onSetLineTxt(this)">
-      
-      <label for="color">set text color: </label>
-      <input type="color" class="color" name="color" form="frmRegister" value="#ff0000"  onchange="onChangeColor(this)"/>
-    
-     <button class="up" onclick="onIncreaseFont()">↑</button>
-     <button class="down" onclick="onDecreaseFont()">↓</button>
-     
-     <button class="add" onclick="OnAddLine()">Add line</button>
-     
-     <button class="switch" onclick="onSwitchLine()">switch line</button>
-     
-     <div class="inputs">
-        <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download jpeg</a>
-        <button class="btn" onclick="onUploadImg()">
-          Upload to Facebook
-        </button>
+      <div class="canvas-container">
+        <canvas width="450" height="450" onmousemove="OnMoveText(event)"></canvas>
       </div>
 
-      <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" accept="image/*" />
+      <div class="btn-download">
+        <div class="btn-input">
+          <input type="text" id="text" class="text" placeholder="Enter text" onchange="onSetLineTxt(this)">
+
+          <div class="btn-container">
+            <button class="add" onclick="OnAddLine()">Add line</button>
+            <button class="switch" onclick="onSwitchLine()">switch line</button>
+            <button class="delete" onclick="OnDelete()">delete</button>
+          </div>
+
+
+
+
+        </div>
+
+        <div class="btn-text">
+          <input type="color" class="color" name="color" form="frmRegister" value="#ff0000"
+            onchange="onChangeColor(this)" />
+          <button class="up" onclick="onIncreaseFont()">A+</button>
+          <button class="down" onclick="onDecreaseFont()">A-</button>
+          <!-- <button class="move-up" onclick="onMoveUp()">up</button>
+          <button class="move-down" onclick="onMoveDown()">down</button> -->
+           <!-- <button class="move-up" onclick="onMoveUp()">up</button>
+          <button class="move-down" onclick="onMoveDown()">down</button>  -->
+        </div>
+
+        <div class="inputs">
+          <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download jpeg</a>
+          <button class="btn" onclick="onUploadImg()">
+            Upload to Facebook
+          </button>
+          <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" accept="image/*" />
+        </div>
+
+
+      </div>
+
     </section>
-    
-    
+
+
     <section class="gallery" hidden></section>
   </main>
 
@@ -61,5 +77,4 @@
 </body>
 
 </html>
-
 

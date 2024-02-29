@@ -1,8 +1,9 @@
 'use strict'
 
 function onGalleryInit() {
+   
     renderGallery()
-    
+   
 }
 
 
@@ -11,12 +12,12 @@ function renderGallery() {
     const elGallery = document.querySelector('.gallery')
 
  let strHtmls = images.map(image => {
-      return `<img onclick="onImgSelect(this)" class="${image.id}" src="${image.url}" >`
+      return `<img onclick="onImgSelect(this)" class="${image.id} gImg" src="${image.url}" >`
     })
 
 
     elGallery.innerHTML = strHtmls.join('')
-
+   
 }
 
 
@@ -25,3 +26,4 @@ console.log('elImg', elImg)
 setImg(elImg)
 renderMeme()
 }
+

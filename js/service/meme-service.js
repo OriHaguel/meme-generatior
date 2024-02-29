@@ -10,6 +10,212 @@ var gImgs = [
     url: 'meme-imgs/meme-imgs/2.jpg',
     keywords: ["funny", "cat"]
   },
+  {
+    id: 3,
+    url: 'meme-imgs/meme-imgs/3.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 4,
+    url: 'meme-imgs/meme-imgs/4.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 5,
+    url: 'meme-imgs/meme-imgs/5.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 6,
+    url: 'meme-imgs/meme-imgs/6.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 7,
+    url: 'meme-imgs/meme-imgs/7.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 8,
+    url: 'meme-imgs/meme-imgs/8.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 9,
+    url: 'meme-imgs/meme-imgs/9.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 10,
+    url: 'meme-imgs/meme-imgs/10.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 11,
+    url: 'meme-imgs/meme-imgs/11.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 12,
+    url: 'meme-imgs/meme-imgs/12.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 13,
+    url: 'meme-imgs/meme-imgs/13.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 14,
+    url: 'meme-imgs/meme-imgs/14.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 15,
+    url: 'meme-imgs/meme-imgs/15.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 16,
+    url: 'meme-imgs/meme-imgs/16.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 17,
+    url: 'meme-imgs/meme-imgs/17.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 18,
+    url: 'meme-imgs/meme-imgs/18.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 19,
+    url: 'meme-imgs/meme-imgs-ratios/2.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 20,
+    url: 'meme-imgs/meme-imgs-ratios/003.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 21,
+    url: 'meme-imgs/meme-imgs-ratios/004.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 22,
+    url: 'meme-imgs/meme-imgs-ratios/5.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 23,
+    url: 'meme-imgs/meme-imgs-ratios/006.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 24,
+    url: 'meme-imgs/meme-imgs-ratios/8.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 25,
+    url: 'meme-imgs/meme-imgs-ratios/9.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 26,
+    url: 'meme-imgs/meme-imgs-ratios/12.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 27,
+    url: 'meme-imgs/meme-imgs-ratios/19.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 28,
+    url: 'meme-imgs/meme-imgs-ratios/8.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 29,
+    url: 'meme-imgs/meme-imgs-ratios/Ancient-Aliens.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 30,
+    url: 'meme-imgs/meme-imgs-ratios/drevil.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 31,
+    url: 'meme-imgs/meme-imgs-ratios/img2.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 32,
+    url: 'meme-imgs/meme-imgs-ratios/img4.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 33,
+    url: 'meme-imgs/meme-imgs-ratios/img5.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 34,
+    url: 'meme-imgs/meme-imgs-ratios/img6.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 35,
+    url: 'meme-imgs/meme-imgs-ratios/img11.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 36,
+    url: 'meme-imgs/meme-imgs-ratios/img12.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 37,
+    url: 'meme-imgs/meme-imgs-ratios/leo.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 38,
+    url: 'meme-imgs/meme-imgs-ratios/meme1.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 39,
+    url: 'meme-imgs/meme-imgs-ratios/One-Does-Not-Simply.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 40,
+    url: 'meme-imgs/meme-imgs-ratios/Oprah-You-Get-A.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 41,
+    url: 'meme-imgs/meme-imgs-ratios/patrick.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 42,
+    url: 'meme-imgs/meme-imgs-ratios/putin.jpg',
+    keywords: ["funny", "cat"]
+  },
+  {
+    id: 43,
+    url: 'meme-imgs/meme-imgs-ratios/X-Everywhere.jpg',
+    keywords: ["funny", "cat"]
+  },
+
 ]
 
 var gMeme = {
@@ -43,7 +249,7 @@ function getMeme() {
   return gMeme
 }
 // draw img handler
-function drawMeme(id, textX, textY,textWidth,textHeight) {
+function drawMeme(id, textX, textY, textWidth, textHeight) {
   const img = new Image()
   const imgIdx = getImageById(id)
   img.src = imgIdx.url
@@ -53,55 +259,48 @@ function drawMeme(id, textX, textY,textWidth,textHeight) {
     gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
-    // linesArr.map((line, idx) => {
-
-    //   gCtx.fillStyle = line[idx].color
-    //   gCtx.font = `${line[idx].size}px Arial`
-    //   gCtx.fillText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
-
-    // })
     linesArr.forEach((line, idx) => {
-      //  const textX = 100 + (idx * 50);
-      //  const textY = 100 + (idx * 50);
-      // const textWidth = gCtx.measureText(line[idx].txt).width
-      // const textHeight = line[idx].size;
 
+
+      gCtx.lineWidth = 1.5
 
       gCtx.fillStyle = line[idx].color
-      gCtx.font = `${line[idx].size}px Arial`
-      
-      
-      
+      gCtx.font = `${line[idx].size}px Impact`
+
+
+
       gCtx.fillText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
+      gCtx.strokeText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50));
 
       gCtx.beginPath();
       gCtx.rect(textX, textY, textWidth, textHeight);
       gCtx.stroke();
 
+
     });
+
+
   }
 }
-
-
-
-
 
 function AddLine() {
 
   gMeme.lines.push({
     txt: 'CHINA',
-    size: 30,
-    color: getRandomColor(),
+    size: 40,
+    color: 'white',
   });
 
 
   linesArr.push(gMeme.lines)
   linesArr.map((line, idx) => {
 
-    gCtx.fillStyle = line[idx].color
-    gCtx.font = `${line[idx].size}px Arial`
-    gCtx.fillText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
 
+    gCtx.lineWidth = 1.5
+    gCtx.fillStyle = line[idx].color
+    gCtx.font = `${line[idx].size}px Impact`
+    gCtx.fillText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
+    gCtx.strokeText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50));
   })
 }
 
@@ -119,9 +318,12 @@ function changeColor(elColor) {
   gMeme.lines[gMeme.selectedLineIdx].color = elColor.value
 }
 
+
+
+
 function increaseFont(width) {
   gMeme.lines[gMeme.selectedLineIdx].size++
- 
+
 }
 
 function decreaseFont() {
@@ -133,39 +335,45 @@ function getImageById(imgId) {
 }
 
 
+
+
 function switchLine() {
   gMeme.selectedLineIdx++
 
   if (gMeme.selectedLineIdx === gMeme.lines.length) {
     gMeme.selectedLineIdx = 0
   }
+
+  var textWidth = gCtx.measureText(getMemeById().txt).width + (getMemeById().size * 3 - 80)
+  var textHeight = getMemeById().size
+
+  var textX = 100 + (gMeme.selectedLineIdx * 50)
+  var textY = (100 - textHeight) + (gMeme.selectedLineIdx * 50)
+
+  drawMeme(gMeme.selectedImgId, textX, textY + 5, textWidth, textHeight)
+
+
+
+}
+
+function getMemeById() {
+  return gMeme.lines.find(line => gMeme.lines[gMeme.selectedLineIdx] === line)
+}
+
+function Delete() {
+  gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+  linesArr.splice(gMeme.selectedLineIdx, 1)
 }
 
 
 
+// function moveUp() {
+//   linesArr[gMeme.selectedLineIdx].txt
 
+//   gCtx.fillText(linesArr[gMeme.selectedLineIdx].txt, x, y + 10);
+//   gCtx.strokeText(linesArr[gMeme.selectedLineIdx].txt, x, y + 10);
 
-
-
-
-
-
-
-
-
-// function getMemeById(memeIdx) {
-//   return gMeme.lines.find((meme,idx) => meme[idx] === memeIdx)
 // }
-
-
-
-
-
-
-
-
-
-
 
 
 
