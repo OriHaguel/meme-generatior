@@ -7,7 +7,6 @@ function onInit() {
   gCtx = gElCanvas.getContext('2d')
 
   renderMeme()
-
 }
 
 function renderMeme() {
@@ -76,27 +75,27 @@ function onMouseClick() {
 
 
 
-function onMoveUp() {
-   moveUp()
-  // renderMeme()
-}
+// function onMoveUp() {
+//    moveUp()
+//   // renderMeme()
+// }
 
 
-function OnMoveText(ev) {
-  let meme = getMeme()
-  if (isDrag) {
-    var mouseX = ev.offsetX
-    var mouseY = ev.offsetY
-    var textWidth = gCtx.measureText(meme.lines[meme.selectedLineIdx].txt).width
-    var textHeight = meme.lines[meme.selectedLineIdx].size
-    var textX = 100 + (meme.selectedLineIdx * 50)
-    var textY = (100 - textHeight) + (meme.selectedLineIdx * 50)
-    if (mouseX >= textX && mouseX <= textX + textWidth &&
-      mouseY >= textY && mouseY <= textY + textHeight) {
-      drawMeme(meme.selectedImgId, textX, textY + 3, textWidth, textHeight)
-    }
-  }
-}
+// function OnMoveText(ev) {
+//   let meme = getMeme()
+//   if (isDrag) {
+//     var mouseX = ev.offsetX
+//     var mouseY = ev.offsetY
+//     var textWidth = gCtx.measureText(meme.lines[meme.selectedLineIdx].txt).width
+//     var textHeight = meme.lines[meme.selectedLineIdx].size
+//     var textX = 100 + (meme.selectedLineIdx * 50)
+//     var textY = (100 - textHeight) + (meme.selectedLineIdx * 50)
+//     if (mouseX >= textX && mouseX <= textX + textWidth &&
+//       mouseY >= textY && mouseY <= textY + textHeight) {
+//       drawMeme(meme.selectedImgId, textX, textY + 3, textWidth, textHeight)
+//     }
+//   }
+// }
 
 
 

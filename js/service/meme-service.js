@@ -222,21 +222,7 @@ var gMeme = {
   selectedImgId: 1,
   selectedLineIdx: 0,
   lines: [
-    // {
-    //   txt: '',
-    //   size: 30,
-    //   color: getRandomColor(),
-    // },
-    // {
-    //   txt: '',
-    //   size: 30,
-    //   color: getRandomColor(),
-    // },
-    // {
-    //   txt: '',
-    //   size: 30,
-    //   color: getRandomColor(),
-    // },
+
   ],
 }
 
@@ -248,7 +234,7 @@ const linesArr = []
 function getMeme() {
   return gMeme
 }
-// draw img handler
+
 function drawMeme(id, textX, textY, textWidth, textHeight) {
   const img = new Image()
   const imgIdx = getImageById(id)
@@ -270,16 +256,14 @@ function drawMeme(id, textX, textY, textWidth, textHeight) {
 
 
       gCtx.fillText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
-      gCtx.strokeText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50));
+      gCtx.strokeText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
 
       gCtx.beginPath();
-      gCtx.rect(textX, textY, textWidth, textHeight);
+      gCtx.rect(textX, textY, textWidth, textHeight)
       gCtx.stroke();
 
 
-    });
-
-
+    })
   }
 }
 
@@ -291,10 +275,8 @@ function AddLine() {
     color: 'white',
   });
 
-
   linesArr.push(gMeme.lines)
   linesArr.map((line, idx) => {
-
 
     gCtx.lineWidth = 1.5
     gCtx.fillStyle = line[idx].color
@@ -387,7 +369,7 @@ function Delete() {
 
 
 
-// download / upload handler
+
 function downloadImg(elLink) {
   const imgContent = gElCanvas.toDataURL("image/jpeg");
   elLink.href = imgContent;
