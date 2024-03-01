@@ -228,7 +228,7 @@ var gMeme = {
 
 var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
 
-const linesArr = []
+
 
 
 function getMeme() {
@@ -245,18 +245,19 @@ function drawMeme(id, textX, textY, textWidth, textHeight) {
     gElCanvas.height = (img.naturalHeight / img.naturalWidth) * gElCanvas.width
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
-    linesArr.forEach((line, idx) => {
+    gMeme.lines.forEach((line) => {
 
 
       gCtx.lineWidth = 1.5
 
-      gCtx.fillStyle = line[idx].color
-      gCtx.font = `${line[idx].size}px Impact`
+      gCtx.fillStyle = line.color
+      gCtx.font = `${line.size}px Impact`
 
 
 
-      gCtx.fillText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
-      gCtx.strokeText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
+      gCtx.fillText(line.txt, line.x, line.y)
+      gCtx.strokeText(line.txt, line.x, line.y)
+
 
       gCtx.beginPath();
       gCtx.rect(textX, textY, textWidth, textHeight)
@@ -264,6 +265,7 @@ function drawMeme(id, textX, textY, textWidth, textHeight) {
 
 
     })
+
   }
 }
 
@@ -273,16 +275,20 @@ function AddLine() {
     txt: 'CHINA',
     size: 40,
     color: 'white',
+    x: gElCanvas.width / 2.5,
+    y: gElCanvas.width / 2.5,
   });
 
-  linesArr.push(gMeme.lines)
-  linesArr.map((line, idx) => {
+
+  gMeme.lines.map((line) => {
 
     gCtx.lineWidth = 1.5
-    gCtx.fillStyle = line[idx].color
-    gCtx.font = `${line[idx].size}px Impact`
-    gCtx.fillText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50))
-    gCtx.strokeText(line[idx].txt, 100 + (idx * 50), 100 + (idx * 50));
+    gCtx.fillStyle = line.color
+    gCtx.font = `${line.size}px Impact`
+
+
+    gCtx.fillText(line.txt, line.x, line.y)
+    gCtx.strokeText(line.txt, line.x, line.y);
   })
 }
 
@@ -303,7 +309,7 @@ function changeColor(elColor) {
 
 
 
-function increaseFont(width) {
+function increaseFont() {
   gMeme.lines[gMeme.selectedLineIdx].size++
 
 }
@@ -329,12 +335,10 @@ function switchLine() {
   var textWidth = gCtx.measureText(getMemeById().txt).width + (getMemeById().size * 3 - 80)
   var textHeight = getMemeById().size
 
-  var textX = 100 + (gMeme.selectedLineIdx * 50)
-  var textY = (100 - textHeight) + (gMeme.selectedLineIdx * 50)
+  var textX = gMeme.lines[gMeme.selectedLineIdx].x
+  var textY = gMeme.lines[gMeme.selectedLineIdx].y - gMeme.lines[gMeme.selectedLineIdx].size 
 
   drawMeme(gMeme.selectedImgId, textX, textY + 5, textWidth, textHeight)
-
-
 
 }
 
@@ -344,20 +348,18 @@ function getMemeById() {
 
 function Delete() {
   gMeme.lines.splice(gMeme.selectedLineIdx, 1)
-  linesArr.splice(gMeme.selectedLineIdx, 1)
 }
 
 
 
-// function moveUp() {
-//   linesArr[gMeme.selectedLineIdx].txt
+function moveUp() {
+gMeme.lines[gMeme.selectedLineIdx].y -=10
 
-//   gCtx.fillText(linesArr[gMeme.selectedLineIdx].txt, x, y + 10);
-//   gCtx.strokeText(linesArr[gMeme.selectedLineIdx].txt, x, y + 10);
+}
 
-// }
-
-
+function moveDown() {
+  gMeme.lines[gMeme.selectedLineIdx].y += 10
+}
 
 
 

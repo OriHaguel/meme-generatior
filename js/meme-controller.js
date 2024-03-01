@@ -10,6 +10,7 @@ function onInit() {
 }
 
 function renderMeme() {
+  gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
   const meme = getMeme()
   const { selectedImgId } = meme
 
@@ -41,6 +42,7 @@ function onDecreaseFont() {
 
 function OnAddLine() {
   AddLine()
+
 }
 
 function OnDelete() {
@@ -60,14 +62,14 @@ function onMouseClick() {
       var textWidth = gCtx.measureText(line.txt).width + (line.size * 3 - 80)
       var textHeight = line.size
 
-      var textX = 100 + (idx * 50)
-      var textY = (100 - textHeight) + (idx * 50)
+      var textX = line.x
+      var textY = line.y - line.size
 
       if (mouseX >= textX && mouseX <= textX + textWidth &&
         mouseY >= textY && mouseY <= textY + textHeight) {
         meme.selectedLineIdx = idx
         drawMeme(meme.selectedImgId, textX, textY + 3, textWidth, textHeight)
-        isDrag = true
+      
       }
     })
   })
@@ -75,29 +77,41 @@ function onMouseClick() {
 
 
 
-// function onMoveUp() {
-//    moveUp()
-//   // renderMeme()
-// }
+function onMoveUp() {
+   moveUp()
+   renderMeme()
+}
+
+function onMoveDown() {
+  moveDown()
+  renderMeme()
+}
+
+function OnMoveText(ev) {
+
+    }
 
 
-// function OnMoveText(ev) {
-//   let meme = getMeme()
-//   if (isDrag) {
-//     var mouseX = ev.offsetX
-//     var mouseY = ev.offsetY
-//     var textWidth = gCtx.measureText(meme.lines[meme.selectedLineIdx].txt).width
-//     var textHeight = meme.lines[meme.selectedLineIdx].size
-//     var textX = 100 + (meme.selectedLineIdx * 50)
-//     var textY = (100 - textHeight) + (meme.selectedLineIdx * 50)
-//     if (mouseX >= textX && mouseX <= textX + textWidth &&
-//       mouseY >= textY && mouseY <= textY + textHeight) {
-//       drawMeme(meme.selectedImgId, textX, textY + 3, textWidth, textHeight)
-//     }
-//   }
-// }
+function getEvPos(ev) {
+	let pos = {
+		x: ev.offsetX,
+		y: ev.offsetY,
+	}
 
+	if (TOUCH_EVENTS.includes(ev.type)) {
 
+		 ev.preventDefault()         // Prevent triggering the mouse events
+		ev = ev.changedTouches[0]   // Gets the first touch point
+		
+		// Calc pos according to the touch screen
+		pos = {
+			x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
+			y: ev.pageY - ev.target.offsetTop - ev.target.clientTop,
+		}
+	console.log('pos',pos )
+	}
+	return pos
+}
 
 function onSwitchLine() {
   switchLine()
