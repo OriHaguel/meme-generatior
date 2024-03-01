@@ -252,7 +252,7 @@ function drawMeme(id, textX, textY, textWidth, textHeight) {
 
       gCtx.fillStyle = line.color
       gCtx.font = `${line.size}px ${line.font}`
-
+     
 
 
       gCtx.fillText(line.txt, line.x, line.y)
@@ -354,12 +354,12 @@ function Delete() {
 
 
 function moveUp() {
-gMeme.lines[gMeme.selectedLineIdx].y -=10
+  getMemeById().y -=10
 
 }
 
 function moveDown() {
-  gMeme.lines[gMeme.selectedLineIdx].y += 10
+  getMemeById().y +=10
 }
 
 

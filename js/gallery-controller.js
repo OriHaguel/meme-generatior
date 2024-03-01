@@ -22,7 +22,6 @@ function renderGallery() {
 
 
 function onImgSelect(elImg) {
-console.log('elImg', elImg)
 setImg(elImg)
 renderMeme()
 }

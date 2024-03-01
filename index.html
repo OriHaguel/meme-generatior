@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body onload="onInit(); onGalleryInit()">
+<body onload="onInit(); onGalleryInit()" onmouseup="onPlaceText(event)">
 
   <header>
     <ul class="link-container">
@@ -23,7 +23,7 @@
 
     <section class="editor">
       <div class="canvas-container">
-        <canvas width="450" height="450" onmousemove="OnMoveText(event)"></canvas>
+        <canvas width="450" height="450"  onmousedown="onText(event)" onmousemove="OnMoveText(event)"></canvas>
       </div>
 
       <div class="btn-download">
