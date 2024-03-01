@@ -140,3 +140,8 @@ function onShowGallery() {
 
 }
 
+function onChangeFont(elSelect) {
+// console.log('getMemeById', )
+getMemeById().font = elSelect.value
+renderMeme()
+}

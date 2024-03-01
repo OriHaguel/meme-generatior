@@ -251,7 +251,7 @@ function drawMeme(id, textX, textY, textWidth, textHeight) {
       gCtx.lineWidth = 1.5
 
       gCtx.fillStyle = line.color
-      gCtx.font = `${line.size}px Impact`
+      gCtx.font = `${line.size}px ${line.font}`
 
 
 
@@ -277,6 +277,7 @@ function AddLine() {
     color: 'white',
     x: gElCanvas.width / 2.5,
     y: gElCanvas.width / 2.5,
+    font: 'Impact'
   });
 
 
@@ -284,7 +285,7 @@ function AddLine() {
 
     gCtx.lineWidth = 1.5
     gCtx.fillStyle = line.color
-    gCtx.font = `${line.size}px Impact`
+    gCtx.font = `${line.size}px ${line.font}`
 
 
     gCtx.fillText(line.txt, line.x, line.y)
@@ -310,12 +311,12 @@ function changeColor(elColor) {
 
 
 function increaseFont() {
-  gMeme.lines[gMeme.selectedLineIdx].size++
+  gMeme.lines[gMeme.selectedLineIdx].size +=5
 
 }
 
 function decreaseFont() {
-  gMeme.lines[gMeme.selectedLineIdx].size--
+  gMeme.lines[gMeme.selectedLineIdx].size -= 5
 }
 
 function getImageById(imgId) {
