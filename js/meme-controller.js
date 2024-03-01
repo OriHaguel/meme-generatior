@@ -188,3 +188,26 @@ function onChangeFont(elSelect) {
   getMemeById().font = elSelect.value
   renderMeme()
 }
+
+function onRemoveBorder(ev){
+
+  let meme = getMeme()
+  var mouseX = ev.offsetX
+  var mouseY = ev.offsetY
+
+  meme.lines.forEach(function (line) {
+    var textWidth = gCtx.measureText(line.txt).width + (line.size * 3 - 80)
+    var textHeight = line.size
+
+    var textX = line.x
+    var textY = line.y - line.size
+
+    if (mouseX >= textX && mouseX <= textX + textWidth &&
+      mouseY >= textY && mouseY <= textY + textHeight) {
+        return
+      } else{
+        drawMeme(meme.selectedImgId,0,0,0,0)
+      }
+       
+  })
+}
