@@ -23,6 +23,7 @@ function renderGallery() {
 
 function onImgSelect(elImg) {
 setImg(elImg)
+onShowEditor()
 renderMeme()
 }
 

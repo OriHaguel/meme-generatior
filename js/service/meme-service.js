@@ -272,11 +272,11 @@ function drawMeme(id, textX, textY, textWidth, textHeight) {
 function AddLine() {
 
   gMeme.lines.push({
-    txt: 'CHINA',
+    txt: 'your text here',
     size: 40,
     color: 'white',
-    x: gElCanvas.width / 2.5,
-    y: gElCanvas.width / 2.5,
+    x: gElCanvas.width / 3,
+    y: gElCanvas.width / 2,
     font: 'Impact'
   });
 
@@ -354,12 +354,12 @@ function Delete() {
 
 
 function moveUp() {
-  getMemeById().y -=10
+  getMemeById().y -=5
 
 }
 
 function moveDown() {
-  getMemeById().y +=10
+  getMemeById().y +=5
 }
 
 

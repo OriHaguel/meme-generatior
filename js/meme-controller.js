@@ -7,8 +7,9 @@ const TOUCH_EVENTS = ['touchstart', 'touchmove', 'touchend']
 function onInit() {
   gElCanvas = document.querySelector('canvas')
   gCtx = gElCanvas.getContext('2d')
-
+  addTouchListeners()
   renderMeme()
+
 }
 
 function renderMeme() {
@@ -16,7 +17,7 @@ function renderMeme() {
   const meme = getMeme()
   const { selectedImgId } = meme
 
-    drawMeme(selectedImgId)
+  drawMeme(selectedImgId)
 
 
   onMouseClick()
@@ -58,6 +59,7 @@ function addTouchListeners() {
   gElCanvas.addEventListener('touchstart', onText)
   gElCanvas.addEventListener('touchmove', OnMoveText)
   gElCanvas.addEventListener('touchend', onPlaceText)
+
 }
 function onMouseClick() {
   gElCanvas.addEventListener('click', function (event) {
@@ -87,9 +89,10 @@ function onMouseClick() {
 function onText(ev) {
   isDrag = true
   let meme = getMeme()
-  var mouseX = ev.offsetX
-  var mouseY = ev.offsetY
-
+   let pos = getEvPos(ev)
+  var mouseX = pos.x
+  var mouseY = pos.y
+ 
   meme.lines.forEach(function (line, idx) {
     var textWidth = gCtx.measureText(line.txt).width + (line.size * 3 - 80)
     var textHeight = line.size
@@ -100,6 +103,8 @@ function onText(ev) {
     if (mouseX >= textX && mouseX <= textX + textWidth &&
       mouseY >= textY && mouseY <= textY + textHeight) {
       meme.selectedLineIdx = idx
+      console.log("🚀 ~ meme.selectedLineIdx:", meme.selectedLineIdx)
+    
     }
   })
 }
@@ -109,8 +114,8 @@ function OnMoveText(ev) {
 
   let pos = getEvPos(ev)
 
-  getMemeById().x = pos.x
-  getMemeById().y = pos.y
+  getMemeById().x = pos.x - ((gCtx.measureText(getMemeById().txt).width + (getMemeById().size * 3 - 120)) / 2)
+  getMemeById().y = pos.y + getMemeById().size / 2
   renderMeme()
 }
 
@@ -128,13 +133,13 @@ function getEvPos(ev) {
 
   if (TOUCH_EVENTS.includes(ev.type)) {
 
-    ev.preventDefault()         // Prevent triggering the mouse events
+     ev.preventDefault()         // Prevent triggering the mouse events
     ev = ev.changedTouches[0]   // Gets the first touch point
 
     // Calc pos according to the touch screen
     pos = {
       x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
-      y: ev.pageY - ev.target.offsetTop - ev.target.clientTop,
+      y: ev.pageY - ev.target.offsetTop - ev.target.clientTop
     }
 
   }
@@ -189,7 +194,7 @@ function onChangeFont(elSelect) {
   renderMeme()
 }
 
-function onRemoveBorder(ev){
+function onRemoveBorder(ev) {
 
   let meme = getMeme()
   var mouseX = ev.offsetX
@@ -204,10 +209,23 @@ function onRemoveBorder(ev){
 
     if (mouseX >= textX && mouseX <= textX + textWidth &&
       mouseY >= textY && mouseY <= textY + textHeight) {
-        return
-      } else{
-        drawMeme(meme.selectedImgId,0,0,0,0)
-      }
-       
+      return
+    } else {
+      drawMeme(meme.selectedImgId, 0, 0, 0, 0)
+    }
+
   })
+}
+
+function onLeft() {
+  getMemeById().x = gElCanvas.width / 25
+  renderMeme()
+}
+function onCenter() {
+ getMemeById().x = gElCanvas.width / 3
+ renderMeme()
+}
+  function onRight() {
+getMemeById().x = gElCanvas.width / 1.8
+ renderMeme()
 }
