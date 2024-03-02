@@ -228,9 +228,6 @@ var gMeme = {
 
 var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
 
-
-
-
 function getMeme() {
   return gMeme
 }
@@ -247,25 +244,16 @@ function drawMeme(id, textX, textY, textWidth, textHeight) {
 
     gMeme.lines.forEach((line) => {
 
-
       gCtx.lineWidth = 1.5
-
       gCtx.fillStyle = line.color
-      gCtx.font = `${line.size}px ${line.font}`
-     
-
-
+      gCtx.font = `${line.size}px ${line.font}` 
       gCtx.fillText(line.txt, line.x, line.y)
       gCtx.strokeText(line.txt, line.x, line.y)
-
 
       gCtx.beginPath();
       gCtx.rect(textX, textY, textWidth, textHeight)
       gCtx.stroke();
-
-
     })
-
   }
 }
 
@@ -278,16 +266,13 @@ function AddLine() {
     x: gElCanvas.width / 3,
     y: gElCanvas.width / 2,
     font: 'Impact'
-  });
-
+  })
 
   gMeme.lines.map((line) => {
 
     gCtx.lineWidth = 1.5
     gCtx.fillStyle = line.color
     gCtx.font = `${line.size}px ${line.font}`
-
-
     gCtx.fillText(line.txt, line.x, line.y)
     gCtx.strokeText(line.txt, line.x, line.y);
   })
@@ -295,20 +280,15 @@ function AddLine() {
 
 function setLineTxt(text) {
   gMeme.lines[gMeme.selectedLineIdx].txt = text.value
-
 }
 
 function setImg(elImg) {
   gMeme.selectedImgId = parseInt(elImg.classList)
-
 }
 
 function changeColor(elColor) {
   gMeme.lines[gMeme.selectedLineIdx].color = elColor.value
 }
-
-
-
 
 function increaseFont() {
   gMeme.lines[gMeme.selectedLineIdx].size +=5
@@ -322,9 +302,6 @@ function decreaseFont() {
 function getImageById(imgId) {
   return gImgs.find(img => img.id === imgId)
 }
-
-
-
 
 function switchLine() {
   gMeme.selectedLineIdx++
@@ -351,8 +328,6 @@ function Delete() {
   gMeme.lines.splice(gMeme.selectedLineIdx, 1)
 }
 
-
-
 function moveUp() {
   getMemeById().y -=5
 
@@ -361,17 +336,6 @@ function moveUp() {
 function moveDown() {
   getMemeById().y +=5
 }
-
-
-
-
-
-
-
-
-
-
-
 
 function downloadImg(elLink) {
   const imgContent = gElCanvas.toDataURL("image/jpeg");

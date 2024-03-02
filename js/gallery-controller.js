@@ -1,11 +1,8 @@
 'use strict'
 
 function onGalleryInit() {
-   
-    renderGallery()
-   
+    renderGallery() 
 }
-
 
 function renderGallery() {
     const images = gImgs
@@ -15,11 +12,9 @@ function renderGallery() {
       return `<img onclick="onImgSelect(this)" class="${image.id} gImg" src="${image.url}" >`
     })
 
-
     elGallery.innerHTML = strHtmls.join('')
-   
+    elGallery.style.display = 'grid'
 }
-
 
 function onImgSelect(elImg) {
 setImg(elImg)

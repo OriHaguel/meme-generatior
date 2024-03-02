@@ -11,6 +11,7 @@
 <body onload="onInit(); onGalleryInit()" onmouseup="onPlaceText(event)">
 
   <header>
+   <div class="logo">THE MEME GENERATOR</div>
     <ul class="link-container">
       <li onclick="onShowEditor()">Editor</li>
       <li onclick="onShowGallery()">Gallery</li>
@@ -19,8 +20,6 @@
   </header>
 
   <main>
-
-
     <section class="editor">
       <div class="canvas-container">
         <canvas width="550" height="450" onclick="onRemoveBorder(event)" onmousedown="onText(event)"
@@ -32,28 +31,24 @@
           <input type="text" id="text" class="text" placeholder="Enter text" onchange="onSetLineTxt(this)">
 
           <div class="btn-container">
-            <button class="add" onclick="OnAddLine()">Add line</button>
-            <button class="switch" onclick="onSwitchLine()">switch line</button>
-            <button class="delete" onclick="OnDelete()">delete</button>
+            <button class="add fa plus" onclick="OnAddLine()"></button>
+            <button class="switch fa repeat" onclick="onSwitchLine()"></button>
+            <button class="delete fa trash" onclick="OnDelete()"></button>
           </div>
-
-
-
-
         </div>
 
         <div class="btn-text">
-          <input type="color" class="color" name="color" form="frmRegister" value="#ff0000"
+          <input type="color" class="color fa palette" name="color" form="frmRegister" value="#ff0000"
             onchange="onChangeColor(this)" />
           <button class="up" onclick="onIncreaseFont()">A+</button>
           <button class="down" onclick="onDecreaseFont()">A-</button>
           
-          <button class="left" onclick="onLeft()">left </button>
-          <button class="center" onclick="onCenter()">center</button>
-          <button class="right" onclick="onRight()">right</button>
+          <button class="left fa align-left" onclick="onLeft()"></button>
+          <button class="center fa align-center" onclick="onCenter()"></button>
+          <button class="right fa align-right" onclick="onRight()"></button>
          
-          <button class="move-up" onclick="onMoveUp()">up</button>
-          <button class="move-down" onclick="onMoveDown()">down</button>
+          <button class="move-up fa arrow-up" onclick="onMoveUp()"></button>
+          <button class="move-down fa arrow-down" onclick="onMoveDown()"></button>
 
 
           <select class="font-change" onchange="onChangeFont(this)">
@@ -64,18 +59,15 @@
         </div>
 
         <div class="inputs">
-          <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download jpeg</a>
+          <a href="#" class="btn fa download" onclick="downloadImg(this)" download="my-img.jpg">download</a>
+         
           <button class="btn" onclick="onUploadImg()">
-            Upload to Facebook
+           Share to Facebook
           </button>
-          <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" accept="image/*" />
+          <!-- <input type="file" class="btn file"  onchange="onImgInput(event)" accept="image/*" /> -->
         </div>
-
-
       </div>
-
     </section>
-
 
     <section class="gallery"></section>
   </main>
