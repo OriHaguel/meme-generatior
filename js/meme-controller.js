@@ -18,6 +18,10 @@ function renderMeme() {
   onMouseClick()
 }
 
+
+
+
+
 function onSetLineTxt(elText) {
   setLineTxt(elText)
   renderMeme()

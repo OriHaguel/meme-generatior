@@ -1,7 +1,11 @@
 'use strict'
 
 function onGalleryInit() {
+ 
+   
     renderGallery()
+   
+   
 }
 
 function renderGallery() {
@@ -9,12 +13,49 @@ function renderGallery() {
     const elGallery = document.querySelector('.gallery')
 
     let strHtmls = images.map(image => {
+   
         return `<img onclick="onImgSelect(this)" class="${image.id} gImg" src="${image.url}" >`
     })
 
-    elGallery.innerHTML = strHtmls.join('')
+    elGallery.innerHTML += strHtmls.join('')
     elGallery.style.display = 'grid'
 }
+
+// function renderKeyWord() {
+//     gImgs.map(img => {
+//         img.keywords = []
+//         if ([7, 9, 3, 5].includes(img.id)) {
+//             img.keywords.push('baby')
+//         }
+//         if ([1, 10, 6, 16, 15].includes(img.id)) {
+//             img.keywords.push('funny')
+//         }
+//         if ([2, 3].includes(img.id)) {
+//             img.keywords.push('dogs')
+//         }
+//         if ([8, 11, 12, 17, 18].includes(img.id)) {
+//             img.keywords.push('crazy')
+//         }
+
+//     })
+// }
+
+// function onSearchWord() {
+//     const elSearch = document.getElementById('img-text')
+    
+//     gImgs.forEach(img => {
+
+//        let images = document.querySelector(`.img${img.id}`)
+     
+       
+//         if (img.keywords[0].includes(elSearch.value)) {
+//            console.log('img.keywords', img.keywords[0])
+//            console.log('img.keywords', elSearch.value)
+//             images.style.display = 'none'
+
+//         }
+//     })
+// }
 
 function onImgSelect(elImg) {
     getMeme().lines = []
@@ -50,7 +91,7 @@ function loadImageFromInput(ev, onImageReady) {
                 keywords: ["funny", "cat"]
             },
         )
-            gMeme.selectedImgId = gImgs[gImgs.length-1].id
+        gMeme.selectedImgId = gImgs[gImgs.length - 1].id
         //   console.log("🚀 ~ loadImageFromInput ~ ev.target.result;:", ev.target.result)
 
         img.onload = () => onImageReady(img);
