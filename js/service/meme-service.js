@@ -322,14 +322,16 @@ function switchLine() {
 }
 
 function RandomMeme() {
+ gMeme.lines = []
+  gMeme.selectedImgId = getRandomIntInclusive(1,18)
  
-  gMeme.selectedImgId = 1
- 
+  const sentenses = ['why the chicken cross the road?','funny init?','knock knock','tell me why','are you sure about that?','wanna hear a joke?']
+  
   gMeme.lines.push({
-    txt: 'CHINA',
-    size: 40,
+    txt: sentenses[getRandomIntInclusive(0,5)],
+    size: 30,
     color: 'red',
-    x: gElCanvas.width / 3,
+    x: gElCanvas.width / 3.5,
     y: gElCanvas.width / 2,
     font: 'Impact'
   })
