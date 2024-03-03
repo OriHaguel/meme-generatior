@@ -92,7 +92,7 @@ function loadImageFromInput(ev, onImageReady) {
             },
         )
         gMeme.selectedImgId = gImgs[gImgs.length - 1].id
-        //   console.log("🚀 ~ loadImageFromInput ~ ev.target.result;:", ev.target.result)
+
 
         img.onload = () => onImageReady(img);
     };

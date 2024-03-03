@@ -96,7 +96,7 @@ function onText(ev) {
     if (mouseX >= textX && mouseX <= textX + textWidth &&
       mouseY >= textY && mouseY <= textY + textHeight) {
       meme.selectedLineIdx = idx
-      console.log("🚀 ~ meme.selectedLineIdx:", meme.selectedLineIdx)
+      
 
     }
   })
@@ -224,5 +224,5 @@ function onEmoji(elEmoji){
     }
   )
   renderMeme()
-  console.log('elEmoji', elEmoji)
+ 
 }
