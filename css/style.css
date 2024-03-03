@@ -87,17 +87,6 @@ label {
 
 }
 
-/* #img-text{
-width: 15em;
- 
-}
-
-.search{
-  
-  margin-left: 16em;
-  display: flex;
-  margin-bottom: 10px;
-} */
 
 .btn-download {
   display: flex;
@@ -243,7 +232,7 @@ input[type="file"]::-webkit-color-swatch {
   src: url(/font/fa-solid-900.ttf);
 }
 
-.fa {
+/* .fa {
   font-weight: 900;
 }
 
@@ -267,15 +256,7 @@ input[type="file"]::-webkit-color-swatch {
   content: "\f019";
 }
 
-.fa.palette::before {
-  content: "\f53f";
-  color: rgb(255, 170, 0);
-  font-size: 30px;
-  display: grid;
-  place-items: center;
-  position: relative;
-  top: 50%;
-}
+
 
 .fa.trash::before {
   content: "\f1f8";
@@ -306,15 +287,15 @@ input[type="file"]::-webkit-color-swatch {
   content: "\f063";
   color: rgb(255, 170, 0);
   font-size: 28px;
-}
+} */
 
-label {
+/* label {
   grid-column: 1;
   background-color: red;
   height: 50px;
   width: 50px;
   z-index: 999;
-}
+} */
 
 .emoji {
   display: flex;
@@ -325,4 +306,13 @@ label {
   align-items: center;
   font-size: 200%;
   background-image: linear-gradient(-86deg, #be4f33 0, #b9b30c 100%);
+}
+.fa.palette::before {
+  content: "\f53f";
+  color: rgb(255, 170, 0);
+  font-size: 30px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  top: 50%;
 }

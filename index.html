@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/4de81986ef.js" crossorigin="anonymous"></script>
 </head>
 
 <body onload="onInit(); onGalleryInit()" onmouseup="onPlaceText(event)">
@@ -32,24 +33,24 @@
           <input type="text" id="text" class="text" placeholder="Enter text" oninput="onSetLineTxt(this)">
 
           <div class="btn-container">
-            <button class="add fa plus" onclick="OnAddLine()"></button>
-            <button class="switch fa repeat" onclick="onSwitchLine()"></button>
-            <button class="delete fa trash" onclick="OnDelete()"></button>
+            <button class="add fa plus" onclick="OnAddLine()"><i class="fa-solid fa-plus"></i></button>
+            <button class="switch fa repeat" onclick="onSwitchLine()"><i class="fa-solid fa-repeat"></i></button>
+            <button class="delete fa trash" onclick="OnDelete()"><i class="fa-solid fa-trash"></i></button>
           </div>
         </div>
 
         <div class="btn-text">
-          <input type="color" class="color fa palette" name="color" form="frmRegister" value="#ff0000"
+          <input type="color" class="color fa palette  fa-solid fa-palette" name="color" form="frmRegister" value="#ff0000"
             oninput="onChangeColor(this)" />
           <button class="up" onclick="onIncreaseFont()">A+</button>
           <button class="down" onclick="onDecreaseFont()">A-</button>
 
-          <button class="left fa align-left" onclick="onLeft()"></button>
-          <button class="center fa align-center" onclick="onCenter()"></button>
-          <button class="right fa align-right" onclick="onRight()"></button>
+          <button class="left fa align-left" onclick="onLeft()"><i class="fa-solid fa-align-left"></i></button>
+          <button class="center fa align-center" onclick="onCenter()"><i class="fa-solid fa-align-center"></i></button>
+          <button class="right fa align-right" onclick="onRight()"><i class="fa-solid fa-align-right"></i></button>
 
-          <button class="move-up fa arrow-up" onclick="onMoveUp()"></button>
-          <button class="move-down fa arrow-down" onclick="onMoveDown()"></button>
+          <button class="move-up fa arrow-up" onclick="onMoveUp()"><i class="fa-solid fa-arrow-up"></i></button>
+          <button class="move-down fa arrow-down" onclick="onMoveDown()"><i class="fa-solid fa-arrow-down"></i></button>
 
 
           <select class="font-change" onchange="onChangeFont(this)">
@@ -68,7 +69,7 @@
 
 
         <div class="inputs">
-          <a href="#" class="btn fa download" onclick="downloadImg(this)" download="my-img.jpg">download</a>
+          <a href="#" class="btn fa download fa-solid fa-download" onclick="downloadImg(this)" download="my-img.jpg">download</a>
 
           <button class="btn" onclick="onUploadImg()">
             Share to Facebook
