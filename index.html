@@ -11,10 +11,11 @@
 <body onload="onInit(); onGalleryInit()" onmouseup="onPlaceText(event)">
 
   <header>
-   <div class="logo">THE MEME GENERATOR</div>
+    <div class="logo">THE MEME GENERATOR</div>
     <ul class="link-container">
       <li onclick="onShowEditor()">Editor</li>
       <li onclick="onShowGallery()">Gallery</li>
+      <li onclick="onRandomMeme()">Randomize</li>
       <li onclick="onShowAbout()">About</li>
     </ul>
   </header>
@@ -28,7 +29,7 @@
 
       <div class="btn-download">
         <div class="btn-input">
-          <input type="text" id="text" class="text" placeholder="Enter text" onchange="onSetLineTxt(this)">
+          <input type="text" id="text" class="text" placeholder="Enter text" oninput="onSetLineTxt(this)">
 
           <div class="btn-container">
             <button class="add fa plus" onclick="OnAddLine()"></button>
@@ -39,14 +40,14 @@
 
         <div class="btn-text">
           <input type="color" class="color fa palette" name="color" form="frmRegister" value="#ff0000"
-            onchange="onChangeColor(this)" />
+            oninput="onChangeColor(this)" />
           <button class="up" onclick="onIncreaseFont()">A+</button>
           <button class="down" onclick="onDecreaseFont()">A-</button>
-          
+
           <button class="left fa align-left" onclick="onLeft()"></button>
           <button class="center fa align-center" onclick="onCenter()"></button>
           <button class="right fa align-right" onclick="onRight()"></button>
-         
+
           <button class="move-up fa arrow-up" onclick="onMoveUp()"></button>
           <button class="move-down fa arrow-down" onclick="onMoveDown()"></button>
 
@@ -58,18 +59,29 @@
           </select>
         </div>
 
+          <div class="emoji">
+          <div onclick="onEmoji(this.innerText)">😵</div>
+          <div onclick="onEmoji(this.innerText)">😉</div>
+          <div onclick="onEmoji(this.innerText)">😎</div>
+          <div onclick="onEmoji(this.innerText)">🤔</div>
+          </div>
+
+
         <div class="inputs">
           <a href="#" class="btn fa download" onclick="downloadImg(this)" download="my-img.jpg">download</a>
-         
+
           <button class="btn" onclick="onUploadImg()">
-           Share to Facebook
+            Share to Facebook
           </button>
-          <!-- <input type="file" class="btn file"  onchange="onImgInput(event)" accept="image/*" /> -->
+          <label for="file" class="btn file">upload image</label>
+          <input type="file" class="btn file" id="file" onchange="onImgInput(event)" accept="image/*" />
         </div>
       </div>
     </section>
 
-    <section class="gallery"></section>
+    <section class="gallery">
+
+    </section>
   </main>
 
   <script src="js/service/util-service.js"></script>

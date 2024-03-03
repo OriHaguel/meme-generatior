@@ -195,7 +195,30 @@ function onCenter() {
   getMemeById().x = gElCanvas.width / 3
   renderMeme()
 }
+
 function onRight() {
   getMemeById().x = gElCanvas.width / 1.8
   renderMeme()
+}
+
+function onRandomMeme(){
+  RandomMeme()
+  onShowEditor()
+  renderMeme()
+}
+
+function onEmoji(elEmoji){
+  const memes = getMeme()
+  memes.lines.push(
+    {
+      txt: `${elEmoji}`,
+      size: 40,
+      color: 'white',
+      x: gElCanvas.width / 3,
+      y: gElCanvas.width / 2,
+      font: 'Impact'
+    }
+  )
+  renderMeme()
+  console.log('elEmoji', elEmoji)
 }
